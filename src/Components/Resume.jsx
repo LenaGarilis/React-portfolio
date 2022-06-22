@@ -1,0 +1,214 @@
+import React from "react";
+import ScreenHeading from "./Utilities/ScreenHeading";
+import { FaUniversity } from "react-icons/fa";
+import { FaHistory } from "react-icons/fa";
+import { FaLaptopCode } from "react-icons/fa";
+import { RiHandHeartLine } from "react-icons/ri";
+
+const Resume = (props) => {
+  const [selectedBulletIndex, setSelectedBulletIndex] = React.useState(0);
+  const [carousalOffsetStyle, setCarousalOffsetStyle] = React.useState({});
+
+  const ResumeHeading = (props) => {
+    return (
+      <div className="resume-heading">
+        <div className="resume-main-heading">
+          <div className="heading-bullet"></div>
+          <span>{props.heading ? props.heading : ""}</span>
+          {props.fromDate && props.toDate ? (
+            <div className="heading-date">
+              {props.fromDate + "-" + props.toDate}
+            </div>
+          ) : (
+            <div></div>
+          )}
+        </div>
+        <div className="resume-sub-heading">
+          <span>{props.subHeading ? props.subHeading : ""}</span>
+        </div>
+        <div className="resume-sub-heading-next">
+          <span>{props.subHeadingNext ? props.subHeadingNext : ""}</span>
+        </div>
+
+        <div className="resume-heading-description">
+          <span>{props.description ? props.description : ""}</span>
+        </div>
+      </div>
+    );
+  };
+
+  const resumeBullets = [
+    {
+      label: "Education",
+      logo: (
+        <div>
+          <FaUniversity />
+        </div>
+      ),
+    },
+    {
+      label: "Work Experience",
+      logo: (
+        <div>
+          <FaHistory />
+        </div>
+      ),
+    },
+    {
+      label: "Programming Skills",
+      logo: (
+        <div>
+          <FaLaptopCode />
+        </div>
+      ),
+    },
+    {
+      label: "Interests",
+      logo: (
+        <div>
+          <RiHandHeartLine />
+        </div>
+      ),
+    },
+  ];
+
+  const programmingSkillsDetails = [
+    { skill: "HTML", ratingPercentage: 60 },
+    { skill: "CSS", ratingPercentage: 65 },
+    { skill: "Javascript", ratingPercentage: 65 },
+    { skill: "React", ratingPercentage: 75 },
+    { skill: "Bootstrap", ratingPercentage: 65 },
+  ];
+
+  const resumeDetails = [
+    /* EDUCATION */
+    <div className="resume-screen-container" key="education">
+      <ResumeHeading
+        heading={"Digital Career Institute"}
+        subHeading={"Full Stack developer"}
+        fromDate={"2021"}
+        toDate={"2022"}
+      />
+      <ResumeHeading
+        heading={"New York Institute of Photography"}
+        subHeading={"Accreditated photographer (PressAccreditation.com)"}
+        fromDate={"2015"}
+        toDate={"2016"}
+      />
+
+      <ResumeHeading
+        heading={"Sevastopol State University"}
+        subHeading={"Bachelor of Economics and Entrepreneurship "}
+        fromDate={"1999"}
+        toDate={"2003"}
+      />
+      <ResumeHeading
+        heading={"Additional Skills"}
+        subHeading={"Languages: English, Russian - fluent;"}
+        subHeadingNext={
+          "German - A2; Photo editing programms: Photoshop, Lightroom"
+        }
+      />
+    </div>,
+
+    /* WORK EXPERIENCE */
+    <div className="resume-screen-container" key="workExperience"></div>,
+
+    /* PROGRAMMING SKILLS */
+    <div
+      className="resume-screen-container programming-skills-container"
+      key="programming-skills"
+    >
+      {programmingSkillsDetails.map((skill, index) => (
+        <div className="skill-parent" key={index}>
+          <span className="resume-sub-heading">{skill.skill}</span>
+          <div className="skill-percentage">
+            <div
+              style={{ width: skill.ratingPercentage + "%" }}
+              className="active-percentage-bar"
+            ></div>
+          </div>
+        </div>
+      ))}
+    </div>,
+
+    /* Interests */
+
+    <div className="resume-screen-container" key="interests">
+      <ResumeHeading
+        heading="Photography"
+        description="Like to capture emotions of people and bring them into lovely memories."
+      />
+      <ResumeHeading
+        heading="Sport and Nutrition"
+        description="Dive with my head into Yoga and meditation, enjoy riding bike, swimming and hiking"
+      />
+      <ResumeHeading
+        heading="Sewing clothes and hame decorations"
+        description="Have tried to sew everything: from underwear to furcoat. Enjoy greatly to decorate home with the selfmade items"
+      />
+    </div>,
+  ];
+
+  const handleCarousal = (index) => {
+    let offsetHeight = 360;
+
+    let newCarousalOffset = {
+      style: { transform: "translateY(" + index * offsetHeight * -1 + "px)" },
+    };
+
+    setCarousalOffsetStyle(newCarousalOffset);
+    setSelectedBulletIndex(index);
+  };
+
+  const getBullets = () => {
+    return resumeBullets.map((bullet, index) => (
+      <div
+        onClick={() => handleCarousal(index)}
+        className={
+          index === selectedBulletIndex ? "bullet selected-bullet" : "bullet"
+        }
+        key={index}
+      >
+        <div className="bullet-logo">{bullet.logo}</div>
+        <span className="bullet-label">{bullet.label}</span>
+      </div>
+    ));
+  };
+
+  const getResumeScreens = () => {
+    return (
+      <div
+        style={carousalOffsetStyle.style}
+        className="resume-details-carousal"
+      >
+        {resumeDetails.map((ResumeDetail) => ResumeDetail)}
+      </div>
+    );
+  };
+
+  return (
+    <section>
+      {" "}
+      <div className="resume-container">
+        <div className="resume-content">
+          <ScreenHeading
+            title={"Resume"}
+            subHeading={"My formal Bio Details"}
+          />
+          <div className="resume-card">
+            <div className="resume-bullets">
+              <div className="bullet-container">
+                <div className="bullet-icons"></div>
+                <div className="bullets">{getBullets()}</div>
+              </div>
+            </div>
+            <div className="resume-bullet-details">{getResumeScreens()}</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Resume;

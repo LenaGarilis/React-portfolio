@@ -1,0 +1,40 @@
+.heading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 0 0 5rem 0;
+}
+.section-sub-heading {
+  letter-spacing: 0.3rem;
+  margin: 0.8rem 0 2rem 0;
+  font-size: 1.2rem;
+}
+.section-heading {
+  font-size: 3.2rem;
+}
+.heading-seperator {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin: 0 0 0 0;
+  width: 18rem;
+}
+.separator-line {
+  width: 100%;
+  height: 0.2rem;
+  background-color: var(--color-main);
+}
+.separator-point {
+  height: 1rem;
+  width: 100%;
+  position: absolute;
+  top: -0.4rem;
+  display: flex;
+  justify-content: center;
+}
+.separator-point div {
+  width: 3.5rem;
+  border-radius: 1rem;
+  background-color: var(--color-marker);
+}
