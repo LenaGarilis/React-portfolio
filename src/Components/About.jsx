@@ -1,5 +1,5 @@
 import React from "react";
-import ScreenHeading from "../Components/Utilities/ScreenHeading";
+import ScreenHeading from "./Utilities/ScreenHeading";
 import { NavLink } from "react-router-dom";
 
 export default function About(props) {
