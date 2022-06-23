@@ -562,11 +562,9 @@ button.submit-button:hover {
   color: black;
 }
 .success-submit-message {
-  display: grid;
-  place-items: center;
-  margin-bottom: 20rem;
-  background-color: var(--color-secondary);
-  height: 8rem;
+  border: 2px solid var(--color-secondary);
+  height: 7rem;
+  width: 100%;
   color: black;
 }
 
