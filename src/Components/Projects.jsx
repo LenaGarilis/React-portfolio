@@ -1,10 +1,14 @@
 import React from "react";
+import ScreenHeading from "./Utilities/ScreenHeading";
 
-export default function Projects() {
+export default function Projects(props) {
   return (
     <section>
       <div className="content">
-        <h1 class="section-heading">Projects</h1>
+        <ScreenHeading
+          title={"Projects"}
+          subHeading={"Realised during 2021-2022"}
+        />
 
         <div class="projects-sec">
           {/* <!-- Left section - Descriptions --> */}

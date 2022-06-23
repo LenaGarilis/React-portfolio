@@ -90,7 +90,7 @@ const Resume = (props) => {
         toDate={"2022"}
       />
       <ResumeHeading
-        heading={"New York Institute of Photography"}
+        heading={"NY Institute of Photography"}
         subHeading={"Accreditated photographer (PressAccreditation.com)"}
         fromDate={"2015"}
         toDate={"2016"}
@@ -188,26 +188,20 @@ const Resume = (props) => {
   };
 
   return (
-    <section>
-      {" "}
-      <div className="resume-container">
-        <div className="resume-content">
-          <ScreenHeading
-            title={"Resume"}
-            subHeading={"My formal Bio Details"}
-          />
-          <div className="resume-card">
-            <div className="resume-bullets">
-              <div className="bullet-container">
-                <div className="bullet-icons"></div>
-                <div className="bullets">{getBullets()}</div>
-              </div>
+    <div className="resume-container screen-container">
+      <div className="resume-content">
+        <ScreenHeading title={"Resume"} subHeading={"My formal Bio Details"} />
+        <div className="resume-card">
+          <div className="resume-bullets">
+            <div className="bullet-container">
+              <div className="bullet-icons"></div>
+              <div className="bullets">{getBullets()}</div>
             </div>
-            <div className="resume-bullet-details">{getResumeScreens()}</div>
           </div>
+          <div className="resume-bullet-details">{getResumeScreens()}</div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

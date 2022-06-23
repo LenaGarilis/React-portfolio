@@ -27,9 +27,8 @@ export default function About(props) {
                   repudiandae numquam rem asperiores ducimus voluptate laborum
                   corrupti quae nihil eveniet, qui laboriosam! Alias, quisquam?
                 </h5>
-                <div className="text-center">
-                  {" "}
-                  <NavLink className="btn button mt-5 me-5" to="/contact">
+                <div className="buttons-about">
+                  <NavLink className="btn button mt-5 " to="/contact">
                     <h4>Contact me</h4>
                   </NavLink>
                   <button className="btn button mt-5">
