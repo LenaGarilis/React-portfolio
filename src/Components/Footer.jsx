@@ -7,7 +7,11 @@ function Footer() {
   return (
     <footer className="sticky-bottom">
       <div className="footer-networks">
-        <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">
+        <a
+          href="https://www.linkedin.com/in/elena-garilis-0431a0249/"
+          target="_blank"
+          rel="noreferrer"
+        >
           <BsLinkedin />
         </a>
         <a

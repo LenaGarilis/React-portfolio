@@ -28,15 +28,14 @@ body {
   font-family: "Poppins";
   font-size: 1.5rem;
   color: var(--color-main);
-  width: 100vw;
-  height: 100vh;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 section {
-  min-height: 87vh;
-  width: 60%;
+  min-height: 86vh;
+  width: 50vw;
   margin: 0 auto;
   display: grid;
   place-items: center;
@@ -52,17 +51,19 @@ h5 {
   font-size: 1.7rem;
   line-height: 2.5rem;
 }
+a.hover-btn:hover {
+  all: unset;
+}
 
 /*  ------------------NavBar----------------------------- */
 header,
 footer {
   background-color: var(--color-secondary);
   color: var(--color-main);
+  font-size: 1.5rem;
   font-weight: bolder;
   padding: 1.5rem 0;
-}
-header {
-  height: 7rem;
+  height: 86px;
 }
 
 /* Theme */
@@ -96,7 +97,7 @@ header {
   background-color: transparent;
 }
 .button {
-  background-color: var(--color-beige);
+  background-color: var(--color-marker);
   border: 2px solid var(--color-secondary);
   border-radius: 1.2rem;
   color: var(--color-white);
@@ -120,7 +121,7 @@ header {
   clip-path: circle(50%);
 }
 .info-img {
-  width: 13rem;
+  width: 17rem;
   background: var(--color-white);
   padding: 0.5rem;
   box-shadow: 1rem 1rem 4rem var(--color-white),
@@ -135,11 +136,13 @@ header {
 /* ------- */
 
 .intro-title {
-  height: 50px;
+  height: 75px;
   overflow: hidden;
   margin: 3rem 0;
 }
-
+.intro-title-item:nth-child(1) {
+  margin-bottom: 12px;
+}
 .intro-title-wrapper {
   height: 100%;
   animation: move 10s ease-in-out infinite alternate;
@@ -161,6 +164,7 @@ header {
 /* --------------------About----------------------------- */
 .card-body h5 {
   text-align: justify;
+  padding-bottom: 1.5rem;
 }
 .buttons-about {
   display: flex;
@@ -274,16 +278,14 @@ header {
   background-color: var(--color-marker);
   border-radius: 25%;
 }
-.resume-sub-heading {
-  font-size: 16px;
-  font-family: "Montserrat Medium";
-  margin: 10px 0 0 0;
-}
+.resume-sub-heading,
+.resume-sub-heading-last,
 .resume-sub-heading-next {
   font-size: 16px;
   font-family: "Montserrat Medium";
   margin: 10px 0 0 0;
 }
+
 .resume-heading-description {
   font-size: 12px;
   text-align: justify;
@@ -300,6 +302,9 @@ header {
   flex-direction: column;
   position: relative;
   width: 50%;
+}
+.soft-skills li {
+  padding: 1rem 0;
 }
 .programming-skills-container {
   display: flex;
@@ -351,7 +356,7 @@ header {
     height: fit-content;
     display: flex;
     flex-direction: column;
-    margin: 30px 0;
+    margin: 0 0;
     align-items: center;
     width: 90%;
   }
@@ -363,7 +368,7 @@ header {
   }
 
   .resume-bullets {
-    margin: 30px 0;
+    margin: 20px 0;
     width: 100%;
   }
 
@@ -371,96 +376,98 @@ header {
     width: 100%;
   }
 }
+@media only screen and (max-width: 600px) {
+  .resume-sub-heading,
+  .resume-sub-heading-last,
+  .resume-sub-heading-next {
+    font-size: 13px;
+    margin: 2px 0 0 0;
+  }
+  .resume-main-heading {
+    font-size: 1.5rem;
+  }
+}
 
 /* --------------------Projects-------------------------- */
+.project_container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2.5rem;
+}
 
-.projects-sec {
-  display: grid;
-  place-items: center;
-  grid-template-columns: 50% 50%;
-  grid-template-rows: repeat(4, 1fr);
-  grid-template-areas:
-    "text1 project1"
-    "text2 project2"
-    "text3 project3"
-    "text4 project4";
-  grid-row-gap: 5rem;
-  grid-column-gap: 3rem;
+.project_item {
+  background: linear-gradient(to right, var(--color-white), var(--color-beige));
+  padding: 1.3rem;
+  border-radius: 1.5rem;
+  transition: var(--transition);
 }
-.one {
-  grid-area: text1;
+
+.project_item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 5px 3px var(--color-marker);
 }
-.two {
-  grid-area: text2;
+
+.project_item_image {
+  border-radius: 1.5rem;
+  overflow: hidden;
 }
-.three {
-  grid-area: text3;
+
+.project_item h3,
+.project_item p {
+  margin: 1rem 0 1.2rem;
 }
-.four {
-  grid-area: text4;
-}
-.image-one {
-  grid-area: project1;
-}
-.image-two {
-  grid-area: project2;
-}
-.image-three {
-  grid-area: project3;
-}
-.image-four {
-  grid-area: project4;
-}
-/* <!-- Projects Right section - Projects images --> */
-.projects-right {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  background: rgb(149, 146, 141, 0.8);
-}
-.project-item {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: grid;
-  align-items: center;
-  color: var(--color-white);
-  padding: 2rem;
+
+.project_item h3 {
+  color: black;
+  font-weight: bold;
+  padding-top: 1rem;
   text-align: center;
 }
-.project-item a {
-  display: inline-block;
-  padding: 1rem 2rem;
-  border: 2px solid var(--color-secondary);
-  border-radius: 0.5rem;
-  text-decoration: none;
-  color: var(--color-white);
-  transition: 0.5s;
-}
-.project-item a:first-of-type {
-  margin-right: 2rem;
-}
-.project-item a:hover {
-  background: var(--color-white);
+
+.project_item p {
   color: black;
 }
 
-.projects-right img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-  transition: 1s;
+.project_item_button {
+  display: grid;
+  place-items: center;
 }
-.projects-right:hover img {
-  -webkit-clip-path: polygon(0 0, 100% 0, 0 0, 0% 100%);
-  clip-path: polygon(0 0, 100% 0, 0 0, 0% 100%);
+
+button.live-demo {
+  cursor: pointer;
+  background: var(--color-secondary);
+  border: 1px solid black;
+  border-radius: 1.2rem;
+  width: 15rem;
+  height: 4rem;
+  padding: 0.7rem;
+  color: black;
+  text-align: center;
+}
+button.live-demo:hover {
+  background: white;
+  color: black;
+}
+
+/* Media query medium device */
+@media screen and (max-width: 1200px) {
+  section {
+    width: 75vw;
+  }
+  .project_container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Media query small device */
+@media screen and (max-width: 600px) {
+  .project_container {
+    grid-template-columns: 1fr;
+  }
+  .heading-date {
+    padding: 4px 8px;
+    font-size: 12px;
+  }
 }
 
 /* --------------------Contact--------------------------- */

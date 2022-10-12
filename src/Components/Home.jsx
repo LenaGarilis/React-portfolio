@@ -16,7 +16,7 @@ export default function Home() {
                 <div class="info-icon">
                   <BsFillCameraFill className="info-icon" />
                 </div>
-                <img class="info-img" src="./images/icon.jpg" alt="" />
+                <img class="info-img" src="./images/student.jpg" alt="" />
               </div>
               <div className="intro-title py-3">
                 <div className="intro-title-wrapper">
@@ -24,7 +24,7 @@ export default function Home() {
                     <h2>Front-end Developer</h2>
                   </div>
                   <div className="intro-title-item">
-                    <h2>Based in Hamburg</h2>
+                    <h2>Based in Ahlerstedt</h2>
                   </div>
                 </div>
               </div>

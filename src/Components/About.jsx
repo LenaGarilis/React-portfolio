@@ -5,36 +5,44 @@ import { NavLink } from "react-router-dom";
 export default function About(props) {
   return (
     <section>
-      <div className="content">
-        <ScreenHeading title={"About me"} subHeading={"Hire & benefit"} />
-        <div class="card ">
-          <div class="row g-0 align-items-center ">
-            <div class="col-md-6">
-              <img
-                src="./images/undraw_react_re_g3ui.svg"
-                class="img-fluid rounded-start "
-                alt="..."
-              />
-            </div>
+      <div class="card ">
+        <div class="row g-0 align-items-center ">
+          <ScreenHeading title={"About me"} subHeading={"Hire & benefit"} />
+          <div class="col-md-6">
+            <img
+              src="./images/undraw_react_re_g3ui.svg"
+              class="img-fluid rounded-start "
+              alt="..."
+            />
+          </div>
 
-            <div class="col-md-6 my-4 ">
-              <div class="card-body ">
-                <h5>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Est
-                  architecto eveniet autem earum beatae quisquam, eum laboriosam
-                  dolorum. Corporis at odio consequatur? At, harum incidunt nam
-                  iure, itaque inventore saepe porro aut perferendis quo facere
-                  repudiandae numquam rem asperiores ducimus voluptate laborum
-                  corrupti quae nihil eveniet, qui laboriosam! Alias, quisquam?
-                </h5>
-                <div className="buttons-about">
-                  <NavLink className="btn button mt-5 " to="/contact">
-                    <h4>Contact me</h4>
-                  </NavLink>
+          <div class="col-md-6 my-4 ">
+            <div class="card-body aboutme">
+              <h5>
+                I am result-oriented and community-focused web developer,
+                passionate about building user-friendly and thoughtful products.
+              </h5>
+
+              <h5>
+                My experience of building effective and sustainable
+                international business made from me and real team player, fast
+                learner, able to pick up new skills and juggle different
+                projects and roles with relative ease.
+              </h5>
+              <h5>I take my work seriously but not myself.</h5>
+              <div className="buttons-about">
+                <NavLink className="btn button mt-5 " to="/contact">
+                  <h4>Contact</h4>
+                </NavLink>
+                <a
+                  className="hover-btn"
+                  href="CV-Elena_Garilis.pdf"
+                  download="CV-Elena_Garilis.pdf"
+                >
                   <button className="btn button mt-5">
                     <h4>Get CV</h4>
                   </button>
-                </div>
+                </a>
               </div>
             </div>
           </div>

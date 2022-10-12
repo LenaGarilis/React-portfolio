@@ -36,13 +36,13 @@ export default function Contact() {
               <ScreenHeading title={"Contact me"} />
               <ul class="contact-icons">
                 <li>
-                  <span>Donauweg 8, 93102 Hamburg, Germany</span>
+                  <span>Ahlerstedt, Germany</span>
                 </li>
                 <li>
-                  <span>lorem@ipsum.com</span>
+                  <span>elenagarilis@web.de</span>
                 </li>
                 <li>
-                  <span>+49 1525 123-45-67</span>
+                  <span>+49 1525 5623463</span>
                 </li>
               </ul>
             </div>
@@ -84,7 +84,7 @@ export default function Contact() {
                     onChange={handleChange}
                     required
                   />
-                  <span>Email Address</span>
+                  <span>Email </span>
                 </div>
                 <div class="inputBox w50">
                   <input
@@ -94,7 +94,7 @@ export default function Contact() {
                     onChange={handleChange}
                     required
                   />
-                  <span>Mobile Number</span>
+                  <span>Mobile</span>
                 </div>
                 <div class="inputBox w100">
                   <textarea

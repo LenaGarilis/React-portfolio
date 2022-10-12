@@ -47,14 +47,6 @@ const Resume = (props) => {
       ),
     },
     {
-      label: "Work Experience",
-      logo: (
-        <div>
-          <FaHistory />
-        </div>
-      ),
-    },
-    {
       label: "Programming Skills",
       logo: (
         <div>
@@ -62,6 +54,15 @@ const Resume = (props) => {
         </div>
       ),
     },
+    {
+      label: "Soft Skills",
+      logo: (
+        <div>
+          <FaHistory />
+        </div>
+      ),
+    },
+
     {
       label: "Interests",
       logo: (
@@ -73,11 +74,14 @@ const Resume = (props) => {
   ];
 
   const programmingSkillsDetails = [
-    { skill: "HTML", ratingPercentage: 60 },
-    { skill: "CSS", ratingPercentage: 65 },
-    { skill: "Javascript", ratingPercentage: 65 },
+    { skill: "HTML", ratingPercentage: 80 },
+    { skill: "CSS", ratingPercentage: 85 },
+    { skill: "Bootstrap", ratingPercentage: 75 },
+    { skill: "Bootstrap", ratingPercentage: 75 },
+    { skill: "Javascript", ratingPercentage: 80 },
     { skill: "React", ratingPercentage: 75 },
-    { skill: "Bootstrap", ratingPercentage: 65 },
+    { skill: "Node JS", ratingPercentage: 65 },
+    { skill: "Mongo Db", ratingPercentage: 75 },
   ];
 
   const resumeDetails = [
@@ -104,15 +108,10 @@ const Resume = (props) => {
       />
       <ResumeHeading
         heading={"Additional Skills"}
-        subHeading={"Languages: English, Russian - fluent;"}
-        subHeadingNext={
-          "German - A2; Photo editing programms: Photoshop, Lightroom"
-        }
+        subHeading={"Languages: English, Russian - fluent; German - A2;"}
+        subHeadingNext={" Photo editing programms: Photoshop, Lightroom"}
       />
     </div>,
-
-    /* WORK EXPERIENCE */
-    <div className="resume-screen-container" key="workExperience"></div>,
 
     /* PROGRAMMING SKILLS */
     <div
@@ -130,6 +129,18 @@ const Resume = (props) => {
           </div>
         </div>
       ))}
+    </div>,
+
+    /* SOFT SKILLS */
+    <div className="resume-screen-container" key="work-experience">
+      <ul className="soft-skills">
+        <li>Team work and cultural fit</li>
+        <li>Patience & Curiosity</li>
+        <li>Time management</li>
+        <li>Eagerness to learn</li>
+        <li>Problem-solving skills</li>
+        <li>Adaptability & Approachability</li>
+      </ul>
     </div>,
 
     /* Interests */
@@ -188,20 +199,25 @@ const Resume = (props) => {
   };
 
   return (
-    <div className="resume-container screen-container">
-      <div className="resume-content">
-        <ScreenHeading title={"Resume"} subHeading={"My formal Bio Details"} />
-        <div className="resume-card">
-          <div className="resume-bullets">
-            <div className="bullet-container">
-              <div className="bullet-icons"></div>
-              <div className="bullets">{getBullets()}</div>
+    <section>
+      <div class="card ">
+        <div class="row g-0 align-items-center ">
+          <ScreenHeading
+            title={"Resume"}
+            subHeading={"My formal Bio Details"}
+          />
+          <div className="resume-card">
+            <div className="resume-bullets">
+              <div className="bullet-container">
+                <div className="bullet-icons"></div>
+                <div className="bullets">{getBullets()}</div>
+              </div>
             </div>
+            <div className="resume-bullet-details">{getResumeScreens()}</div>
           </div>
-          <div className="resume-bullet-details">{getResumeScreens()}</div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
