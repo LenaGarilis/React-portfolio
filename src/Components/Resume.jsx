@@ -155,7 +155,7 @@ const Resume = (props) => {
         description="Dive with my head into Yoga and meditation, enjoy riding bike, swimming and hiking"
       />
       <ResumeHeading
-        heading="Sewing clothes and hame decorations"
+        heading="Sewing clothes and home decorations"
         description="Have tried to sew everything: from underwear to furcoat. Enjoy greatly to decorate home with the selfmade items"
       />
     </div>,
